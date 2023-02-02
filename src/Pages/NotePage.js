@@ -29,7 +29,7 @@ const NotePage = (props) => {
     }
     let onSubmit=()=>{
       console.log('body',note.body)
-      if (!note.body && id!='new') {
+      if (!note.body && id!=='new') {
         deleteNote()
       } else if(note.body && id!='new'){
         updateNote()
@@ -40,12 +40,14 @@ const NotePage = (props) => {
       }   
     }
     let deleteNote=async()=>{
+      if (id!='new') {
+        
       await fetch(`http://localhost:8000/notes/${id}`,
       {
         method:'DELETE',
         headers:{'Content-type':'application/json'},
         body:JSON.stringify(note)
-      })
+      })}
     }
     let createNote=async()=>{
       await fetch(`http://localhost:8000/notes`,{

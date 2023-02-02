@@ -27,7 +27,7 @@ const Noteslist = () => {
         {notes?.map(note=>(<Note key={note.id} note={note}/>)
         )}
     </div>
-    <button className='' ><Link to='/note/new' element={<NotePage/>}>+</Link></button>
+    <button className='floating-button' ><Link to='/note/new' element={<NotePage/>}>+</Link></button>
     </div>
 
   )
